@@ -118,3 +118,57 @@ body.mode-hesed .hero,body.mode-hesed .business-section{animation:brand-arrive .
  body.mode-shalom .site-header,body.mode-befit .site-header{height:72px}
 }
 @media(prefers-reduced-motion:reduce){body.mode-shalom .shalom-intro,body.mode-befit .befit-brand,body.mode-hesed .hero,body.mode-hesed .business-section{animation:none}}
+
+
+/* CAMBIO DE MARCA — dirección de arte claramente diferenciada */
+body{transition:background-color .5s,color .5s}
+body.mode-shalom{background:#f2eadf!important;color:#29251f!important}
+body.mode-shalom .shalom-intro{background:#f2eadf}
+body.mode-shalom .shalom-hero{min-height:calc(100svh - 82px);grid-template-columns:.82fr 1.18fr;padding:7vh 7%;background:linear-gradient(115deg,#e9ddcb 0%,#f5efe6 52%,#e8ddce 100%);overflow:hidden}
+body.mode-shalom .shalom-hero .eyebrow{color:#96744e}
+body.mode-shalom .shalom-hero h1{font-size:clamp(64px,7.2vw,106px);letter-spacing:-3px}
+body.mode-shalom .shalom-hero .sub-hero-copy>p:not(.eyebrow){color:#62584c;font-size:15px}
+body.mode-shalom .shalom-hero .sub-hero-image{height:min(66vh,650px)}
+body.mode-shalom .shalom-hero .sub-hero-image img{filter:saturate(.82) sepia(.08)}
+body.mode-shalom .shalom-hero .sub-hero-image:after{border-color:#b18d61;inset:18px -18px -18px 18px}
+body.mode-shalom .dark-button{background:#29251f;color:#f5eee4;padding:20px 26px}
+body.mode-shalom .hours-bar{padding-top:32px;padding-bottom:32px;background:#d9c9b4}
+body.mode-shalom .menu-section,body.mode-shalom .gallery-section{background:#f2eadf}
+body.mode-shalom .section-heading h2{color:#29251f}
+body.mode-shalom .menu-item,body.mode-shalom .menu-item>div{background:#e8dfd2}
+body.mode-shalom .reservation-section{min-height:330px}
+body.mode-shalom .site-header{box-shadow:0 10px 30px #1d19130c}
+body.mode-befit{background:#eaf0f5!important;color:#17283a!important}
+body.mode-befit .befit-brand{background:#eaf0f5}
+body.mode-befit .befit-hero{min-height:calc(100svh - 82px);grid-template-columns:.82fr 1.18fr;padding:7vh 7%;background:radial-gradient(circle at 76% 25%,#34516d 0,#172c42 38%,#0b1827 78%);overflow:hidden}
+body.mode-befit .befit-hero h1{font-size:clamp(64px,7.2vw,106px);letter-spacing:-3px;color:#f4f7fb}
+body.mode-befit .befit-hero h1 em{color:#9fc4e8}
+body.mode-befit .befit-hero .eyebrow{color:#9fc4e8}
+body.mode-befit .befit-hero .sub-hero-copy>p:not(.eyebrow){color:#c4d1df;font-size:15px}
+body.mode-befit .befit-hero .sub-hero-image{height:min(66vh,650px)}
+body.mode-befit .befit-hero .sub-hero-image img{filter:saturate(.72) contrast(1.08)}
+body.mode-befit .befit-hero .sub-hero-image:after{border-color:#9fc4e8;inset:18px -18px -18px 18px}
+body.mode-befit .befit-stats{padding-top:36px;padding-bottom:36px}
+body.mode-befit .locations-section,body.mode-befit .plans-section,body.mode-befit .coaches-section{background:#eaf0f5}
+body.mode-befit .location-card,body.mode-befit .coach-placeholder{background:#f8fafc}
+body.mode-befit .site-header{box-shadow:0 10px 35px #07162530}
+body.mode-hesed{background:#f4f1eb!important;color:#171a1d!important}
+body.mode-hesed .hero{min-height:calc(100svh - 112px)}
+body.mode-hesed .announcement{display:flex}
+body.mode-hesed .site-header{background:rgba(247,245,240,.88);color:#171a1d}
+body.mode-hesed .main-nav{color:#55584f}
+body.mode-hesed .header-link{color:#171a1d}
+#brand-transition{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:#171a1d;color:#f7f3eb;opacity:0;visibility:hidden;pointer-events:none;transition:opacity .38s ease,visibility .38s ease}
+#brand-transition.is-active{opacity:1;visibility:visible}
+#brand-transition .transition-inner{text-align:center;transform:translateY(18px);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+#brand-transition.is-active .transition-inner{transform:translateY(0)}
+#brand-transition .transition-kicker{font-size:9px;letter-spacing:4px;opacity:.65;margin-bottom:18px}
+#brand-transition .transition-name{font-family:'Playfair Display',serif;font-size:clamp(58px,12vw,130px);line-height:.9;letter-spacing:-3px}
+#brand-transition .transition-sub{font-size:9px;letter-spacing:4px;margin-top:22px;opacity:.72}
+#brand-transition[data-brand="shalom"]{background:linear-gradient(135deg,#29251f,#554331);color:#f3e8d7}
+#brand-transition[data-brand="befit"]{background:radial-gradient(circle at 50% 40%,#304d69,#0b1827 70%);color:#edf5fc}
+@media(max-width:800px){
+ body.mode-shalom .shalom-hero,body.mode-befit .befit-hero{min-height:auto;padding:55px 7% 70px}
+ body.mode-shalom .shalom-hero h1,body.mode-befit .befit-hero h1{font-size:clamp(54px,13vw,76px)}
+ body.mode-shalom .shalom-hero .sub-hero-image,body.mode-befit .befit-hero .sub-hero-image{height:42vh;min-height:280px}
+}
