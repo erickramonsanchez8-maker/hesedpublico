@@ -73,3 +73,48 @@ footer{background:rgba(255,255,255,.26)}
 @media(prefers-reduced-motion:reduce){
  *,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
 }
+
+
+/* NAVEGACIÓN POR EXPERIENCIAS: cada marca ocupa el escenario completo */
+.site-header{position:sticky;top:0;z-index:50;transition:background .45s,color .35s,border-color .35s,box-shadow .35s;box-shadow:0 8px 30px rgba(20,25,30,.035)}
+.main-nav a{position:relative;padding:10px 0;transition:color .25s}
+.main-nav a:after{content:"";position:absolute;left:0;right:100%;bottom:3px;height:1px;background:var(--gold);transition:right .28s}
+.main-nav a:hover:after,.main-nav a[aria-current="page"]:after{right:0}
+body.mode-shalom{--paper:#f4eee5;--ink:#28251f;--gold:#b18d61;background:#f4eee5}
+body.mode-shalom .announcement{display:none}
+body.mode-shalom main>:not(.shalom-intro){display:none!important}
+body.mode-shalom .shalom-intro{display:block!important;animation:brand-arrive .65s cubic-bezier(.2,.7,.2,1) both}
+body.mode-shalom .site-header{background:rgba(38,37,32,.94);color:#f6f0e7;border-color:#ffffff18;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+body.mode-shalom .site-header .wordmark{color:#f6f0e7}
+body.mode-shalom .site-header .mark{border-color:#c6a77c;color:#c6a77c}
+body.mode-shalom .main-nav{color:#e8dfd2}
+body.mode-shalom .main-nav a:after{background:#c6a77c}
+body.mode-shalom .header-link{color:#f6f0e7;border-color:#c6a77c}
+body.mode-shalom .shalom-hero{background:radial-gradient(ellipse at 80% 15%,#eee1ce,#f4eee5 58%);min-height:650px}
+body.mode-shalom .shalom-hero h1{color:#292720}
+body.mode-shalom .shalom-hero h1 em{color:#a17d54}
+body.mode-shalom .hours-bar{background:#e8ddce}
+body.mode-shalom .reservation-section{background:radial-gradient(ellipse at 85% 10%,rgba(190,155,111,.2),transparent 34%),linear-gradient(120deg,#343029,#211f1b)}
+body.mode-shalom footer{display:none}
+body.mode-befit{--paper:#edf2f6;--ink:#17283a;background:#edf2f6}
+body.mode-befit .announcement{display:none}
+body.mode-befit main>:not(.befit-brand){display:none!important}
+body.mode-befit .befit-brand{display:block!important;animation:brand-arrive .65s cubic-bezier(.2,.7,.2,1) both}
+body.mode-befit .site-header{background:rgba(14,28,43,.96);color:#f3f6fa;border-color:#ffffff18;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px)}
+body.mode-befit .site-header .wordmark{color:#f3f6fa}
+body.mode-befit .site-header .mark{border-color:#9fc4e8;color:#9fc4e8}
+body.mode-befit .main-nav{color:#d4dfeb}
+body.mode-befit .main-nav a:after{background:#9fc4e8}
+body.mode-befit .header-link{color:#f3f6fa;border-color:#9fc4e8}
+body.mode-befit footer{display:none}
+body.mode-hesed main>:not(.hero):not(.intro-strip):not(.business-section):not(.quote-band):not(.contact-section){display:none!important}
+body.mode-hesed .announcement{display:flex}
+body.mode-hesed .site-header{position:sticky}
+body.mode-hesed .hero,body.mode-hesed .business-section{animation:brand-arrive .55s ease both}
+@keyframes brand-arrive{from{opacity:0;transform:translateY(14px);filter:blur(5px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@media(max-width:800px){
+ body.mode-shalom .main-nav.open,body.mode-befit .main-nav.open{background:#252720;color:#f7f2e9;border-top:1px solid #ffffff20}
+ body.mode-befit .main-nav.open{background:#101d2d;color:#f3f6fa}
+ body.mode-shalom .site-header,body.mode-befit .site-header{height:72px}
+}
+@media(prefers-reduced-motion:reduce){body.mode-shalom .shalom-intro,body.mode-befit .befit-brand,body.mode-hesed .hero,body.mode-hesed .business-section{animation:none}}
