@@ -24,3 +24,5 @@
 .food-grid img{object-position:center 52%;}
 .gallery-grid img{object-fit:cover;}
 .gallery-grid img:first-child{object-position:center 78%;}
+
+.contact-phone{color:inherit;text-decoration:underline;text-decoration-color:#b69c87;text-underline-offset:4px}
