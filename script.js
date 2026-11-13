@@ -7,15 +7,22 @@
   let current = 'hesed';
   const titles = { hesed: 'GRUPO HESED', shalom: 'shalom.', befit: 'BEFIT' };
   const config = {
-    shalom: { number: '5210000000000', message: 'Hola, quiero información sobre Shalom y hacer una reservación.' },
-    befit: { number: '5210000000000', message: 'Hola, quiero información sobre BEFIT: sedes, precios y horarios.' }
+    shalom: { number: '5213411076050', message: 'Hola, quiero información sobre Shalom y hacer una reservación.' }
   };
 
   document.querySelectorAll('.year').forEach(el => el.textContent = new Date().getFullYear());
   document.querySelectorAll('[data-wa]').forEach(link => {
     const item = config[link.dataset.wa];
-    if (!item) return;
-    link.href = 'https://wa.me/' + item.number + '?text=' + encodeURIComponent(item.message);
+    if (!item) {
+      link.removeAttribute('href');
+      link.setAttribute('aria-disabled', 'true');
+      link.setAttribute('title', 'El contacto de BEFIT está pendiente de configuración.');
+      link.classList.add('contact-pending');
+      link.addEventListener('click', event => event.preventDefault());
+      return;
+    }
+    const message = link.dataset.message || item.message;
+    link.href = 'https://wa.me/' + item.number + '?text=' + encodeURIComponent(message);
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
   });
