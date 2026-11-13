@@ -18,3 +18,9 @@
 .contact-pending{opacity:.5;cursor:not-allowed;pointer-events:none}
 @media(max-width:800px){.visit-section{padding:65px 7%}.visit-grid{grid-template-columns:1fr}.visit-map,.visit-map iframe{min-height:300px}}
 @media(max-width:520px){.shalom-header nav{max-width:76%;overflow-x:auto;scrollbar-width:none}.shalom-header nav::-webkit-scrollbar{display:none}.visit-details{padding:25px}.cta-actions{display:grid}.cta-actions .light-button{text-align:center}}
+
+/* Ajustes de fotografía propia de SHALOM */
+.shalom-hero>img{object-position:center 46%;}
+.food-grid img{object-position:center 52%;}
+.gallery-grid img{object-fit:cover;}
+.gallery-grid img:first-child{object-position:center 78%;}
