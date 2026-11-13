@@ -5,7 +5,11 @@ Sitio estático de Grupo HESED con tres experiencias integradas en una sola pág
 - `index.html`: portal corporativo, experiencia de SHALOM y experiencia de BEFIT.
 - `styles.css`: estilos y diseño responsivo.
 - `script.js`: navegación y enlaces de contacto por WhatsApp.
-- `assets/shalom/`: fotografías propias de Shalom optimizadas para web.
+- `assets/shalom/`: carpeta prevista para las fotografías propias de Shalom, optimizadas para web.
+
+## Integración de fotografías de SHALOM
+
+Las rutas de las fotografías ya están configuradas en `index.html`. Para incorporar los archivos binarios, descarga `SHALOM_FOTOS_WEB_READY.zip`, descomprímelo en la raíz del repositorio y conserva la carpeta `assets/shalom/` con sus nombres de archivo. No subas el ZIP sin descomprimir.
 
 ## SHALOM — datos configurados
 
