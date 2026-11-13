@@ -21,7 +21,7 @@
       link.addEventListener('click', event => event.preventDefault());
       return;
     }
-    const message = link.dataset.message || item.message;
+    const message = (link.dataset.message || item.message).replace(/\\n/g, '\n');
     link.href = 'https://wa.me/' + item.number + '?text=' + encodeURIComponent(message);
     link.target = '_blank';
     link.rel = 'noopener noreferrer';
