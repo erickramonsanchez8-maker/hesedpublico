@@ -1,0 +1,37 @@
+name: Importar fotografías reales de SHALOM a Grupo HESED
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-photos:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+      - name: Importar fotografías optimizadas
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets/shalom
+          base="https://raw.githubusercontent.com/erickramonsanchez8-maker/assosiated/main/docs/assets/shalom"
+          for file in dish-01.jpg dish-02.jpg dish-03.jpg dish-04.jpg drink.jpg exterior.jpg hero.jpg interior-01.jpg interior-02.jpg interior-03.jpg; do
+            curl --fail --location --silent --show-error "$base/$file" -o "assets/shalom/$file"
+            test -s "assets/shalom/$file"
+          done
+      - name: Guardar fotografías en Grupo HESED
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/shalom
+          if git diff --cached --quiet; then
+            echo "Las fotografías ya están actualizadas."
+          else
+            git commit -m "Add optimized real SHALOM photos"
+            git push
+          fi
