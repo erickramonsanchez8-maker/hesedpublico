@@ -2,6 +2,9 @@ name: Importar fotografías reales de SHALOM a Grupo HESED
 
 on:
   workflow_dispatch:
+  push:
+    paths:
+      - 'index.html'
 
 permissions:
   contents: write
